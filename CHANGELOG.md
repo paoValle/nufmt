@@ -14,6 +14,9 @@ All notable changes to nufmt are listed here. The format follows
   inline on the first pass and expands it on the second. This covers unknown commands
   (`ansi -e [...]`), operators, `not`, `$in`, records, and `match`, for example
   `{ return (ls | get name | each {|it| $it} | prepend "x") }`.
+- A user-defined type alias in a custom command signature is kept as written, in the parameters
+  (`[rect: Rectangle]`, `[...rects: Rectangle]`) and in the input/output annotation
+  (`: Rectangle -> Rectangle`), instead of being dropped or replaced with `any`.
 
 ## [0.1.6] - 2026-10-21
 
